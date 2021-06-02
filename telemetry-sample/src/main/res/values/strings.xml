@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">telemetry-sample</string>
+    <string name="seq_url_label">SEQ URL</string>
+</resources>
