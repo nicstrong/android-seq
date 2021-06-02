@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <PreferenceCategory
+        app:key="seq_category"
+        app:title="SEQ">
+
+        <androidx.preference.EditTextPreference
+            android:inputType="textUri"
+            app:key="seq_url"
+            app:title="Url"
+            app:useSimpleSummaryProvider="true" />
+
+        <androidx.preference.EditTextPreference
+            android:inputType="text"
+            app:key="seq_api_key"
+            app:title="API Key"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

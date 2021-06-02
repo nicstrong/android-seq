@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import java.io.IOException
 
-data class SamplePreferences(
+data class SeqPreferences(
     val url: String?,
     val apiKey: String?
 )
@@ -24,7 +24,7 @@ class PreferencesRepository(private val dataStore: DataStore<Preferences>) {
         val SEQ_APIKEY_KEY = stringPreferencesKey("seq_api_key")
     }
 
-    val samplePreferencesFlow: Flow<SamplePreferences> = dataStore.data
+    val seqPreferencesFlow: Flow<SeqPreferences> = dataStore.data
         .catch { exception ->
             if (exception is IOException) {
                 Log.e(LOG_TAG, "Error reading preferences.", exception)
@@ -35,7 +35,7 @@ class PreferencesRepository(private val dataStore: DataStore<Preferences>) {
         }.map { preferences ->
             val seqUrl = preferences[PreferencesKeys.SEQ_URL_KEY]
             val apiKey = preferences[PreferencesKeys.SEQ_APIKEY_KEY]
-            SamplePreferences(seqUrl, apiKey)
+            SeqPreferences(seqUrl, apiKey)
         }
 
 
